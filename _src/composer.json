@@ -1,0 +1,6 @@
+{
+    "require": {
+        "somesh/php-query": "^2.0",
+        "formr/formr": "^1.2"
+    }
+}

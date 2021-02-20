@@ -1,0 +1,88 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "f92f80071c08e8d10a34b84689384b1d",
+    "packages": [
+        {
+            "name": "formr/formr",
+            "version": "1.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/formr/Formr.git",
+                "reference": "c6f5c4c8ebaf8d651428a69ea8ea41ca6bb0bea0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/formr/Formr/zipball/c6f5c4c8ebaf8d651428a69ea8ea41ca6bb0bea0",
+                "reference": "c6f5c4c8ebaf8d651428a69ea8ea41ca6bb0bea0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "class.formr.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Gavin",
+                    "homepage": "https://formr.github.io",
+                    "role": "Original Author"
+                }
+            ],
+            "description": "Formr is a PHP micro-framework which helps you build and validate forms quickly, painlessly, and without all the messy overhead.",
+            "time": "2021-02-13T11:26:46+00:00"
+        },
+        {
+            "name": "somesh/php-query",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/slaith/phpQuery.git",
+                "reference": "91519876bb56ddc453a05be05d61c1a9489864c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/slaith/phpQuery/zipball/91519876bb56ddc453a05be05d61c1a9489864c8",
+                "reference": "91519876bb56ddc453a05be05d61c1a9489864c8",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "phpQuery/phpQuery.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "somesh",
+                    "email": "mail@somesh.io"
+                }
+            ],
+            "description": "A composer wrapper for the phpQuery package",
+            "time": "2018-04-19T11:48:21+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
