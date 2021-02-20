@@ -96,8 +96,7 @@
       $arrTit[0] = trim($arrTit[0]).trim($codF);
       //--> PI21IntCA_18Feb21_20228
       
-      $fNOM = implode(' ǁ ', $arrTit);
-      // $fNOM = implode(' ║ ', $arrTit);
+      $fNOM = implode(' ║ ', $arrTit);
       
       $fNOM = str_replace(" ", "_", trim($fNOM));
 
