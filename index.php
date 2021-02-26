@@ -1,6 +1,6 @@
 <?php  
 
-	define('APPVER', '1.21.1');
+	define('APPVER', '1.21.2');
 	define('APPNOM', 'rmDZoomRec');
 
 	define('APPDET', '
@@ -107,9 +107,9 @@
       $fDST = $dirDst.$fNOM;
       // $fLOG = $dirLog.$fNOM.'.log';
 
-      $fLOG = ($logEST) ? '> '.$dirLog.$fNOM.'.log': '' ;
+      $fLOG = ($logEST) ? ' > '.$dirLog.$fNOM.'.log': '' ;
       
-      $strCOD = "zoomdl -u $urlOri -f $fDST $fLOG";
+      $strCOD = "zoomdl -u $urlOri -f '$fDST'$fLOG";
 
       echo "<p>$strTit<br>$strData<br>$strPeso</p>";
       
