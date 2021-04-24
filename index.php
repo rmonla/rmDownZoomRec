@@ -19,7 +19,7 @@
 
 		');
 
-
+  // rrr
 
 ?>
 
@@ -39,24 +39,28 @@
     require_once '_src/vendor/autoload.php';
 
   // Inicializo variables.
-    $urlOri = '';
-    $dirDst = '/home/rmonla/Descargas/dticClases/';
+    // $urlOri  = '';
+    // $lstCOMs = '';
+
+    $dirDst = '';
+    // $dirDst = '/home/rmonla/Descargas/dticClases/';
     $logEST = False;
     $dirLog = '/tmp/';
     $strSEP = ' | ';
 
     $form = new Formr\Formr('bootstrap');
+    $form->create_form('urlORI|url');
 
   // check if the form has been submitted
   if( $form->submitted() ){
      // $urlOri = 'https://utn.zoom.us/rec/share/0EXhZfZpcsLf0nEoWrHyU9XdlrYP2N4BnFJJelMr5n9F83OrhsniHrRNUsoh-GKd.mOcTfpb755WvRZT1';
 
     // Inicializo variables.
-      $urlOri = $form->post('urlOri');
+      $urlOri  = $form->post('urlori');
 
     // Obtengo el HTML de la URL y genero el objeto DOM.
       $srtHTML = file_get_contents($urlOri);
-      $dom = phpQuery::newDocumentHTML($srtHTML);
+      $dom     = phpQuery::newDocumentHTML($srtHTML);
 
     // Proceso el HTML.
       $dom = $dom['.player-header'];
@@ -86,21 +90,25 @@
       for ($i=0; $i < 5; $i++) $strF .= $strD[$i].' ';
       //--> Feb 18, 2021 8:28 PM
 
-      $codF = date_format(date_create($strF), '-dMy-Hi');
+      $codF = date_format(date_create($strF), 'd.M.H:i.');
       //--> 18Feb21_20228
 
     // Proceso el nombre del archivo.
-      $arrTit = explode($strSEP, $strTit);
+      
+      $fNOM = trim($codF).trim($strTit);
+      
+      //$fNOM = utf8_encode($fNOM);
+      
+      //$arrTit = explode($strSEP, $strTit);
       //--> ['PI21IntCA', 'Pre-Ingreso2021 Intensivo [Comisión A]', 'UTNLaRioja']
 
-      $arrTit[0] = trim($arrTit[0]).trim($codF);
+      //$arrTit[0] = trim($arrTit[0]).trim($codF);
       //--> PI21IntCA_18Feb21_20228
       
-      $fNOM = implode(' ║ ', $arrTit);
+      // $fNOM = implode(' | ', $arrTit);
       
-      $fNOM = str_replace(" ", "_", trim($fNOM));
+      // $fNOM = str_replace(" ", "_", trim($fNOM));
 
-      //$fNOM = utf8_encode($fNOM);
 
     // Proceso el commado a ejecutar.
       
@@ -109,16 +117,14 @@
 
       $fLOG = ($logEST) ? ' > '.$dirLog.$fNOM.'.log': '' ;
       
-      $strCOD = "zoomdl -u $urlOri -f '$fDST'$fLOG";
+      echo "<br><p>zoomdl -u $urlOri -f '$fDST'$fLOG</p>";
 
       echo "<p>$strTit<br>$strData<br>$strPeso</p>";
       
-      echo "<p>$strCOD</p>";
+  } else {
+
   }
-  $arrForm = [
-    'url'   => "urlOri, URL:, $urlOri",
-  ];
-  $form->fastform($arrForm);
+  
 ?>
       
     </div>
