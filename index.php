@@ -36,10 +36,6 @@
     $form->open();
     $form->text('urlOri','URL');
 
-    
-    // $form->text('urlori','URL ORI');
-    // $form->submit_button('Submit Form');
-
   // check if the form has been submitted
   if( $form->submitted() ) {
     // Inicializo variables.
@@ -67,16 +63,22 @@
 
       $strTit = utf8_decode($strTit);
 
+      $aTit = explode(" | ", $strTit);
+
+
     // Proceso la fecha.
       $strD = explode(' ', $strData);
 
       $strF = '';
       for ($i=0; $i < 5; $i++) $strF .= $strD[$i].' ';     //--> Feb 18, 2021 8:28 PM
 
-      $codF = date_format(date_create($strF), 'd.M.H:i.'); //--> 18.Feb.14:00
+      $codF = date_format(date_create($strF), '.d.M.H:i'); //--> 18.Feb.14:00
+      
+      $aTit[0] = $aTit[0].$codF;
 
     // Proceso el nombre del archivo.
-      $fNOM = trim($codF).trim($strTit);
+      $fNOM = implode(" | ", $aTit);
+      // $fNOM = trim($codF).trim($strTit);
       
     // Proceso el commado a ejecutar.
       $fDST = $dirDst.$fNOM;

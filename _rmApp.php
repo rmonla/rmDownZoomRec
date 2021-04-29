@@ -20,6 +20,7 @@
       ');
 
     $appVers = [
+      '1.21.7' => 'codTit - Pone código de carrera al comienzo del título.',
       '1.21.7' => 'LISTA - Agrega una lista que se incrementa con comandos zoomdl.',
       '1.21.6' => 'rmApp - Agrrega Detalles del código',
       '1.21.0' => 'Inicia codificación'
