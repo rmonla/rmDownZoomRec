@@ -1,6 +1,8 @@
-<?php  
+ <?php  
   
   /// include_once '_rmApp.php';
+  // Inicializo variables.
+     $archOrigen  = 'splitORI.html';
 
 ?>
 
@@ -23,9 +25,6 @@
   /* Cargar el HTML a procesar. */
     //Dependencias
       require_once '_src/vendor/autoload.php';
-    // Inicializo variables.
-       
-       $archOrigen  = 'splitORI.html';
     
     // Obtengo el HTML de la URL y genero el objeto DOM.
       $srtHTML = file_get_contents($archOrigen);
